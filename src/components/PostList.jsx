@@ -1,7 +1,13 @@
 import PostCard from "./PostCard";
 import PostCount from "./PostCount";
+import PostSkeleton from "./PostSkeleton";
 
 function PostList({ posts }) {
+  if (!posts || posts.length === 0) {
+    // show skeleton when no posts are yet available
+    return <PostSkeleton />;
+  }
+
   return (
     <div>
       <h2
