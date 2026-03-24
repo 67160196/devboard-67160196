@@ -28,21 +28,33 @@ function AddPostForm({ onAddPost }) {
         เพิ่มโพสต์ใหม่
       </h3>
 
-      <input
-        type="text"
-        placeholder="หัวข้อโพสต์"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        style={{
-          width: "100%",
-          padding: "0.5rem",
-          marginBottom: "0.5rem",
-          border: "1px solid #cbd5e0",
-          borderRadius: "4px",
-          fontSize: "1rem",
-          boxSizing: "border-box",
-        }}
-      />
+      <div style={{ marginBottom: "0.5rem" }}>
+        <input
+          type="text"
+          placeholder="หัวข้อโพสต์"
+          value={title}
+          maxLength={100}
+          onChange={(e) => setTitle(e.target.value)}
+          style={{
+            width: "100%",
+            padding: "0.5rem",
+            border: "1px solid #cbd5e0",
+            borderRadius: "4px",
+            fontSize: "1rem",
+            boxSizing: "border-box",
+          }}
+        />
+        <div
+          style={{
+            textAlign: "right",
+            marginTop: "0.25rem",
+            fontSize: "0.85rem",
+            color: title.length > 90 ? "#e53e3e" : "#718096",
+          }}
+        >
+          {title.length}/100
+        </div>
+      </div>
 
       <textarea
         placeholder="เนื้อหาโพสต์"
