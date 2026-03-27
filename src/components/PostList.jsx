@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import PostCard from "./PostCard";
 import LoadingSpinner from "./LoadingSpinner";
+import PostCount from "./PostCount";
 
 function PostList() {
   const [posts, setPosts] = useState([]);
@@ -74,6 +75,8 @@ function PostList() {
           boxSizing: "border-box",
         }}
       />
+
+      <PostCount count={filtered.length} />
 
       {filtered.length === 0 && (
         <p style={{ color: "#718096", textAlign: "center", padding: "2rem" }}>
